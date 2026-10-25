@@ -11,7 +11,7 @@ export const META: Record<Lang, { title: string; description: string }> = {
   },
 };
 
-export const ROOM_IMAGES = ['beach', 'jetty', 'pink', 'island'] as const;
+export const ROOM_PHOTOS: string[][] = [["rm-shore-1", "rm-shore-2"], ["rm-jetty-1", "rm-jetty-2", "rm-jetty-3"], ["rm-coral-1", "rm-coral-2", "rm-coral-3"], ["rm-island-1", "rm-island-2", "rm-island-3"]];
 
 export const COPY = {
   en: {
@@ -30,12 +30,12 @@ export const COPY = {
     suitesEyebrow: 'Suites', suitesTitle: 'Every room looks at the sea',
     swipe: 'Swipe', of: 'of',
     rooms: [
-      { name: 'Shore Suite', meta: 'Beach access · King bed · Up to 2 guests', text: 'Step from your terrace straight onto white sand, with a shaded daybed under the palms.', alt: 'White beach umbrella and lounger on turquoise water at Kanawa' },
-      { name: 'Jetty Villa', meta: 'Over-water deck · Up to 2 guests', text: 'At the end of our wooden jetty, with a ladder down to the reef and stars all around.', alt: 'Long wooden jetty over clear reef water at Kanawa Island' },
-      { name: 'Coral Suite', meta: 'Plunge pool · King or twin · Up to 3 guests', text: 'A soft pink palette borrowed from the beaches of Padar, with a plunge pool on the terrace.', alt: 'Pink sand beach and turquoise sea on Padar Island' },
-      { name: 'Island Residence', meta: 'Two bedrooms · Private pool · Up to 5 guests', text: 'Our largest home, for families and friends, with a private pool and a cook on request.', alt: 'Pale sand beach and calm lagoon on a Komodo island' },
+      { name: 'Shore Suite', meta: 'Beach access · King bed · Up to 2 guests', text: 'Step from your terrace straight onto white sand, with a shaded daybed under the palms.', alts: ["Ocean-view suite with a king bed, freestanding bath and glass doors to the sea", "Lounge sofa facing a wide window over the bay"] },
+      { name: 'Jetty Villa', meta: 'Over-water deck · Up to 2 guests', text: 'At the end of our wooden jetty, with a ladder down to the reef and stars all around.', alts: ["Pool villa with loungers and umbrellas among tropical plants", "Over-water villas along a wooden walkway at dusk", "Sea-view bedroom with a king bed and floor-to-ceiling glass"] },
+      { name: 'Coral Suite', meta: 'Plunge pool · King or twin · Up to 3 guests', text: 'A soft pink palette borrowed from the beaches of Padar, with a plunge pool on the terrace.', alts: ["Crisp suite bedroom with a king bed and patterned cushions", "Freestanding bathtub under tall windows", "Suite bedroom with a king bed and warm bedside lamps"] },
+      { name: 'Island Residence', meta: 'Two bedrooms · Private pool · Up to 5 guests', text: 'Our largest home, for families and friends, with a private pool and a cook on request.', alts: ["Wood-panelled bedroom under a pitched timber roof", "Bright bathroom with a soaking tub and wicker chairs", "Deep stone-tiled bathtub"] },
     ],
-    askRoom: 'Ask about this suite',
+    photoNote: 'Illustrative photo', photoOf: 'Photo {n} of {t}', askRoom: 'Ask about this suite',
     seaEyebrow: 'At sea', seaTitle: 'Days that start on a boat',
     sea: [
       { t: 'Komodo by private boat', d: 'An early start to see the dragons on Rinca or Komodo with a park ranger, then a swim at Pink Beach.', img: 'boat', alt: 'Komodo dragon carvings on the bow of a wooden boat' },
@@ -72,12 +72,12 @@ export const COPY = {
     suitesEyebrow: 'Suite', suitesTitle: 'Setiap kamar memandang laut',
     swipe: 'Geser', of: 'dari',
     rooms: [
-      { name: 'Suite Pantai', meta: 'Akses pantai · Ranjang king · Maks. 2 tamu', text: 'Melangkah dari teras langsung ke pasir putih, dengan daybed teduh di bawah pohon kelapa.', alt: 'Payung putih dan kursi santai di tepi laut biru toska di Kanawa' },
-      { name: 'Vila Dermaga', meta: 'Dek di atas air · Maks. 2 tamu', text: 'Di ujung dermaga kayu kami, dengan tangga turun ke terumbu dan bintang di segala arah.', alt: 'Dermaga kayu panjang di atas air jernih Pulau Kanawa' },
-      { name: 'Suite Koral', meta: 'Kolam rendam · King atau twin · Maks. 3 tamu', text: 'Nuansa merah muda lembut yang terinspirasi pantai Padar, dengan kolam rendam di teras.', alt: 'Pantai pasir merah muda dan laut toska di Pulau Padar' },
-      { name: 'Rumah Pulau', meta: 'Dua kamar tidur · Kolam pribadi · Maks. 5 tamu', text: 'Rumah terbesar kami untuk keluarga dan sahabat, dengan kolam pribadi dan juru masak bila diminta.', alt: 'Pantai pasir pucat dan laguna tenang di sebuah pulau Komodo' },
+      { name: 'Suite Pantai', meta: 'Akses pantai · Ranjang king · Maks. 2 tamu', text: 'Melangkah dari teras langsung ke pasir putih, dengan daybed teduh di bawah pohon kelapa.', alts: ["Suite pemandangan laut dengan ranjang king, bak mandi berdiri, dan pintu kaca ke laut", "Sofa santai menghadap jendela lebar ke teluk"] },
+      { name: 'Vila Dermaga', meta: 'Dek di atas air · Maks. 2 tamu', text: 'Di ujung dermaga kayu kami, dengan tangga turun ke terumbu dan bintang di segala arah.', alts: ["Vila kolam dengan kursi santai dan payung di antara tanaman tropis", "Vila di atas air di sepanjang jalan kayu saat senja", "Kamar pemandangan laut dengan ranjang king dan kaca setinggi plafon"] },
+      { name: 'Suite Koral', meta: 'Kolam rendam · King atau twin · Maks. 3 tamu', text: 'Nuansa merah muda lembut yang terinspirasi pantai Padar, dengan kolam rendam di teras.', alts: ["Kamar suite rapi dengan ranjang king dan bantal bermotif", "Bak mandi berdiri di bawah jendela tinggi", "Kamar suite dengan ranjang king dan lampu tidur hangat"] },
+      { name: 'Rumah Pulau', meta: 'Dua kamar tidur · Kolam pribadi · Maks. 5 tamu', text: 'Rumah terbesar kami untuk keluarga dan sahabat, dengan kolam pribadi dan juru masak bila diminta.', alts: ["Kamar berpanel kayu di bawah atap kayu miring", "Kamar mandi terang dengan bak rendam dan kursi rotan", "Bak mandi dalam berlapis ubin batu"] },
     ],
-    askRoom: 'Tanya tentang suite ini',
+    photoNote: 'Foto ilustrasi', photoOf: 'Foto {n} dari {t}', askRoom: 'Tanya tentang suite ini',
     seaEyebrow: 'Di laut', seaTitle: 'Hari yang dimulai di atas kapal',
     sea: [
       { t: 'Komodo dengan kapal pribadi', d: 'Berangkat pagi untuk melihat komodo di Rinca atau Komodo bersama ranger taman nasional, lalu berenang di Pantai Merah Muda.', img: 'boat', alt: 'Ukiran komodo di haluan kapal kayu' },

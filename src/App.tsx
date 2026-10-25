@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, CalendarHeart, Menu, Minus, Phone, Plane, Plus, X } from 'lucide-react';
-import { COPY, ROOM_IMAGES } from '@/content';
+import { COPY, ROOM_PHOTOS } from '@/content';
 import { CREDITS } from '@/credits';
 import { useCopy } from '@/lib/lang';
 import { PHONE_DISPLAY, TEL, waUrl } from '@/lib/wa';
 import { todayISO, useBooking } from '@/lib/booking';
 import { HeroPic, Pic } from '@/components/Pic';
+import { RoomGallery } from '@/components/RoomGallery';
 import { LangSwitch } from '@/components/LangSwitch';
 import { WaFab, WaIcon } from '@/components/WaFab';
 
@@ -174,7 +175,7 @@ function Suites({ onAsk }: { onAsk: (r: string) => void }) {
       <div className="s-track" ref={ref} onScroll={onScroll} role="region" aria-label={c.suitesTitle} tabIndex={0}>
         {c.rooms.map((r, i) => (
           <article className="s-card" key={r.name}>
-            <Pic name={ROOM_IMAGES[i] ?? 'beach'} alt={r.alt} sizes="(min-width: 900px) 42vw, 86vw" />
+            <RoomGallery className="rg-top" photos={ROOM_PHOTOS[i] ?? []} alts={r.alts} label={r.name} note={c.photoNote} photoOf={c.photoOf} sizes="(min-width: 900px) 42vw, 86vw" />
             <div className="s-veil" />
             <div className="s-txt">
               <p className="s-meta">{r.meta}</p>
